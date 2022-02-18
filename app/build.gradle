@@ -2,6 +2,9 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'org.jetbrains.kotlin.android.extensions'
+apply plugin: 'dagger.hilt.android.plugin'
+apply plugin: 'kotlin-kapt'
+
 
 android {
     compileSdk 31
@@ -48,4 +51,7 @@ dependencies {
     implementation "androidx.navigation:navigation-fragment-ktx:2.5.0-alpha02"
 
     implementation 'androidx.fragment:fragment-ktx:1.4.1'
+
+    implementation "com.google.dagger:hilt-android:2.40.5"
+    kapt "com.google.dagger:hilt-android-compiler:2.40.5"
 }
