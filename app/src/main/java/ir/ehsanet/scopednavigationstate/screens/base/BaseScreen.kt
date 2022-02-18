@@ -1,4 +1,4 @@
-package ir.ehsanet.scopednavigationstate.base
+package ir.ehsanet.scopednavigationstate.screens.base
 
 import android.os.Bundle
 import android.util.Log

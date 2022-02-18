@@ -1,7 +1,7 @@
 package ir.ehsanet.scopednavigationstate.screens.main_nav.in_ride_nav.ride_info
 
 import ir.ehsanet.scopednavigationstate.R
-import ir.ehsanet.scopednavigationstate.base.BaseScreen
+import ir.ehsanet.scopednavigationstate.screens.base.BaseScreen
 
 class RideInfoScreen : BaseScreen() {
 
