@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/in_ride_navigation">
+
+    <fragment
+        android:id="@+id/ride_info_screen"
+        android:name="ir.ehsanet.scopednavigationstate.screens.main_nav.in_ride_nav.ride_info.RideInfoScreen"
+        android:label="Ride Info Screen"
+        tools:layout="@layout/fragment_ride_info">
+
+    </fragment>
+
+</navigation>
