@@ -1,0 +1,12 @@
+package ir.ehsanet.scopednavigationstate.activities
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import ir.ehsanet.scopednavigationstate.R
+
+class MainActivity : AppCompatActivity() {
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+    }
+}
