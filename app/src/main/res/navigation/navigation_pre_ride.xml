@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pre_ride_navigation">
+
+    <fragment
+        android:id="@+id/destination_picker_screen"
+        android:name="ir.ehsanet.scopednavigationstate.screens.main_nav.pre_ride_nav.destination_picker.DestinationPickerScreen"
+        android:label="Destination Picker"
+        tools:layout="@layout/fragment_destination_picker">
+
+        <action
+            android:id="@+id/action_ride_initializer_to_post_ride"
+            app:destination="@id/vehicle_picker_screen"
+            app:enterAnim="@anim/slide_in_top_to_bottom"
+            app:exitAnim="@anim/slide_out_top_to_bottom"
+            app:popEnterAnim="@anim/slide_in_bottom_to_top"
+            app:popExitAnim="@anim/slide_out_bottom_to_top" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/vehicle_picker_screen"
+        android:name="ir.ehsanet.scopednavigationstate.screens.main_nav.pre_ride_nav.vehicle_picker.VehiclePickerScreen"
+        android:label="Vehicle Picker Screen"
+        tools:layout="@layout/fragment_vehicle_picker">
+
+    </fragment>
+
+
+</navigation>
