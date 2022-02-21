@@ -2,38 +2,36 @@ package ir.ehsanet.scopednavigationstate.screens.main_nav
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import ir.ehsanet.scopednavigationstate.data.InRideNavState
-import ir.ehsanet.scopednavigationstate.data.PreRideNavState
-import ir.ehsanet.scopednavigationstate.data.RequestedRideNavState
+import dagger.hilt.android.lifecycle.HiltViewModel
 import ir.ehsanet.scopednavigationstate.data.RideNavState
+import ir.ehsanet.scopednavigationstate.data.repository.GlobalRideRepository
+import ir.ehsanet.scopednavigationstate.data.repository.RideRepository
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.flow.asSharedFlow
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-
-class MainViewModel : ViewModel() {
+@HiltViewModel
+class MainViewModel @Inject constructor(
+    private val globalRideRepository: RideRepository,
+) : ViewModel() {
 
     private val rideNavState = MutableSharedFlow<RideNavState>()
+
+    private fun updateRideNavState(state: RideNavState) {
+        viewModelScope.launch {
+            rideNavState.emit(state)
+        }
+    }
 
     fun getNavigationEvents(): SharedFlow<RideNavState> {
         return rideNavState.asSharedFlow()
     }
 
-    fun onNavEvents(state: RideNavState) {
-        viewModelScope.launch {
-            when (state) {
-                is PreRideNavState -> {
-                    rideNavState.emit(state)
-                }
-                is RequestedRideNavState -> {
-                    rideNavState.emit(state)
-                }
-                is InRideNavState -> {
-                    rideNavState.emit(state)
-                }
-            }
-        }
+    fun start() {
+        val rideNavState = globalRideRepository.getRideNavState()
+        updateRideNavState(rideNavState)
     }
 
 
