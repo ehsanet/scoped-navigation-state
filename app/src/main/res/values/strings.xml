@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Stateful Ride Hailing</string>
+    <string name="destination_picker_title">Pick your destination...</string>
 </resources>

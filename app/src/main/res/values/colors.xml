@@ -8,4 +8,13 @@
     <color name="black">#191919</color>
     <color name="gray">#272727</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="text_title">@color/black</color>
+    <color name="text_body">@color/black</color>
+    <color name="text_subtitle">@color/gray</color>
+    <color name="default_background">@color/white</color>
+    <color name="gray_light">#DAD9D9</color>
+    <color name="button_disabled">#9B9A9A</color>
+    <color name="button_enabled">#000000</color>
+
 </resources>
